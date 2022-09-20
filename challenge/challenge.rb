@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-class Converter
-  NUMBERS = [
+# This Class is responsible for converting number to different notations
+class NumberConverter
+  ROMAN_NUMBERS = [
     [1, 'I'],
     [4, 'IV'],
     [5, 'V'],
@@ -18,12 +19,14 @@ class Converter
   ].freeze
 
   def int_to_roman(int)
+    return 'Invalid Input' unless int.is_a?(Integer)
+
     current = int
-    pointer = NUMBERS.length - 1
-    res = ''
+    pointer = ROMAN_NUMBERS.length - 1
+    res = []
 
     while current != 0
-      value, symbol = NUMBERS[pointer]
+      value, symbol = ROMAN_NUMBERS[pointer]
 
       if value <= current
         res << symbol
@@ -33,6 +36,6 @@ class Converter
       end
     end
 
-    res
+    res.join('')
   end
 end
