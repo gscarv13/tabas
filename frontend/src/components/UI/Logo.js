@@ -1,6 +1,7 @@
 const Logo = () => {
   return (
     <svg
+      data-testid="logo-svg"
       width={106}
       height={26}
       fill="none"

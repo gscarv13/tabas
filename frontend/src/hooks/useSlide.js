@@ -6,7 +6,6 @@ const useSlide = (picturesLength) => {
   const handleSlide = (direction, index) => {
     let moveSlide = null;
 
-    console.log(direction);
     switch (direction) {
       case 'left':
         moveSlide = (prev) => prev === 0 ? picturesLength - 1 : prev -= 1

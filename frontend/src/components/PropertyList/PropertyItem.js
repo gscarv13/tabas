@@ -4,7 +4,7 @@ import styles from './PropertyItem.module.css';
 const PropertyItem = ({ name, cover, address, description, monthlyRate, pictures }) => {
 
   return (
-    <div className={styles['card-container']}>
+    <div className={styles['card-container']} data-testid="property-card">
       <div className={styles['property-info-container']}>
         <div className={styles['cover-container']}>
           <img src={cover} alt={`${name} building`} />
