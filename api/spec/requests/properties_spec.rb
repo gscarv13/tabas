@@ -10,7 +10,7 @@ RSpec.describe '/properties', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      get properties_url
+      get api_v1_properties_url
 
       expect(response).to be_successful
       expect(response_body.length).to be(1)
@@ -19,7 +19,7 @@ RSpec.describe '/properties', type: :request do
     it 'return the property with image url' do
       serialized_property = ActiveModelSerializers::SerializableResource.new(factory_one).as_json
 
-      get properties_url
+      get api_v1_properties_url
 
       expect(response_body.first).to eq(serialized_property.with_indifferent_access)
     end
