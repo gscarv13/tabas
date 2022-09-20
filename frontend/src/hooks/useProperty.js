@@ -4,11 +4,13 @@ import { httpGetProperties } from "../utils/requests";
 
 const useProperty = () => {
   const [ properties, setProperties ] = useState([])
-  // const [isPendingLaunch, setPendingLaunch] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getProperties = useCallback( async () => {
+    setIsLoading(true);
     const fetchedProperties = await httpGetProperties();
     setProperties(fetchedProperties);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -16,7 +18,8 @@ const useProperty = () => {
   }, [getProperties])
 
   return {
-    properties: properties,
+    properties,
+    isLoading,
   }
 }
 
