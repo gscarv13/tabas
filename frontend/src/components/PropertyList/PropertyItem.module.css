@@ -1,0 +1,37 @@
+.card-container {
+  padding: 1rem;
+  border-radius: 5px;
+  width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.cover-container {
+  width: 100%;
+}
+
+.cover-container img {
+  border-radius: 1rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 920px) {
+  .card-container {
+    min-width: 40rem;
+    max-width: 75rem;
+  }
+
+  .property-info-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .cover-container {
+    min-width: 50%;
+  }
+}
